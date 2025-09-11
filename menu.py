@@ -1,3 +1,4 @@
+import os
 
 def menu():
     print("1. Sumar")
@@ -60,7 +61,7 @@ def validacion(mensaje):
             if not (c >= '0' and c <= '9'):
                 es_numero = False
 
-        # Validamos que sea número y positivo
+     
         if es_numero and valor != "" and int(valor) >= 0:
             valido = True
         else:
@@ -70,56 +71,79 @@ def validacion(mensaje):
 
 isActive = True
 while isActive:
-        menu()
-        opcion = validacion("Seleccione una opción: ")
-        match opcion:
-            case 1:
-                print("Suma")
-                num1 = validacion("Ingrese el primer número: ")
-                num2 = validacion("Ingrese el segundo número: ")
-                print(f"La suma es: {suma(num1, num2)}")
-                input("Presione enter salir al menu")
-            case 2:
-                print("Resta")
-                num1 = validacion("Ingrese el primer número: ")
-                num2 = validacion("Ingrese el segundo número: ")
-                print(f"La resta es: {resta(num1, num2)}")    
-                input("Presione enter salir al menu")
-            case 3:
-                print("Factorial")
-                num = validacion("Ingrese un número: ")
-                if factorial(num) == -1:
-                    print("No se puede calcular el factorial de un número negativo")
-                else:
-                    print(f"El factorial de {num} es: {factorial(num)}")
-                input("Presione enter salir al menu")
-            case 4:
-                print("Combinatoria")
-                n = validacion("Ingrese n: ")
-                k = validacion("Ingrese k: ")
-                if k > n:
-                    print("No se puede calcular")
-                else:
-                    print(f"La combinatoria de {n} y {k} es: {combinatoria(n, k)}")
-                input("Presione enter salir al menu")
-            case 5:
-                print("Triángulo de Pascal")
-                n = validacion("Ingrese el número de filas: ")
-                trianguloPascal(n)
-                input("Presione enter salir al menu")
-            case 6:
-                print("Celsius a Fahrenheit")
-                celsius = validacion("Ingrese la temperatura en Celsius: ")
-                print(f"{celsius}°C son {conversorFarenheit(celsius)}°F")
-                input("Presione enter salir al menu")
-            case 7:
-                print("Fahrenheit a Celsius")
-                fahrenheit = validacion("Ingrese la temperatura en Fahrenheit: ")
-                print(f"{fahrenheit}°F son {conversorCelsius(fahrenheit)}°C")
-                input("Presione enter salir al menu")
-            case 8:
-                print("Saliendo...")
-                isActive = False
-            case _:
-                print("Opción no válida") 
-                input("Presione enter para volver a intentarlo")   
+    menu()
+    opcion = validacion("Seleccione una opción: ")
+
+    if opcion == 1:
+        os.system("clear")
+        print("Suma")
+        num1 = validacion("Ingrese el primer número: ")
+        num2 = validacion("Ingrese el segundo número: ")
+        print(f"La suma es: {suma(num1, num2)}")
+        input("Presione enter para salir al menú")
+        os.system("clear")
+
+    elif opcion == 2:
+        os.system("clear")
+        print("Resta")
+        num1 = validacion("Ingrese el primer número: ")
+        num2 = validacion("Ingrese el segundo número: ")
+        print(f"La resta es: {resta(num1, num2)}")
+        input("Presione enter para salir al menú")
+        os.system("clear")
+
+    elif opcion == 3:
+        os.system("clear")
+        print("Factorial")
+        num = validacion("Ingrese un número: ")
+        if factorial(num) == -1:
+            print("No se puede calcular el factorial de un número negativo")
+        else:
+            print(f"El factorial de {num} es: {factorial(num)}")
+        input("Presione enter para salir al menú")
+        os.system("clear")
+
+    elif opcion == 4:
+        os.system("clear")
+        print("Combinatoria")
+        n = validacion("Ingrese n: ")
+        k = validacion("Ingrese k: ")
+        if k > n:
+            print("No se puede calcular")
+        else:
+            print(f"La combinatoria de {n} y {k} es: {combinatoria(n, k)}")
+        input("Presione enter para salir al menú")
+        os.system("clear")
+
+    elif opcion == 5:
+        os.system("clear")
+        print("Triángulo de Pascal")
+        n = validacion("Ingrese el número de filas: ")
+        trianguloPascal(n)
+        input("Presione enter para salir al menú")
+        os.system("clear")
+
+    elif opcion == 6:
+        os.system("clear")
+        print("Celsius a Fahrenheit")
+        celsius = validacion("Ingrese la temperatura en Celsius: ")
+        print(f"{celsius}°C son {conversorFarenheit(celsius)}°F")
+        input("Presione enter para salir al menú")
+        os.system("clear")
+
+    elif opcion == 7:
+        os.system("clear")
+        print("Fahrenheit a Celsius")
+        fahrenheit = validacion("Ingrese la temperatura en Fahrenheit: ")
+        print(f"{fahrenheit}°F son {conversorCelsius(fahrenheit)}°C")
+        input("Presione enter para salir al menú")
+        os.system("clear")
+
+    elif opcion == 8:
+        os.system("clear")
+        print("Saliendo...")
+        isActive = False
+
+    else:
+        print("Opción no válida")
+        input("Presione enter para volver a intentarlo")
