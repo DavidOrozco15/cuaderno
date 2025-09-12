@@ -61,7 +61,6 @@ def validacion(mensaje):
             if not (c >= '0' and c <= '9'):
                 es_numero = False
 
-     
         if es_numero and valor != "" and int(valor) >= 0:
             valido = True
         else:
