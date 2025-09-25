@@ -31,7 +31,16 @@ while isActive:
             print(f"Ahora sus tareas pendientes son: {pendientes}")
             input("Presiona enter para continuar....")
         case 3:
-            pass
+            os.system("clear")
+            print("Actualizar Tareas")
+            for indice, tarea in enumerate(pendientes):
+                print(f"[{indice}] {tarea}")
+            numero = int(input("Ingrese el numero de la tarea que quiere actualizar: "))
+            cambiado = pendientes.pop(numero)
+            actualizado = (input("Ingrese la nueva tarea: "))
+            pendientes.insert(numero, actualizado)
+            print(f"Ahora sus tareas pendientes son: {pendientes}")
+            input("Presiona enter para continuar....")
         case 4:
             os.system("clear")
             print("Completar Tareas")
